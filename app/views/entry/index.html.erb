@@ -1,0 +1,17 @@
+<h1>All Entries</h1>
+
+<ul>
+  <% @entries.each do |entry| %>
+    <li>
+      <%= link_to entry.title, entry_path(entry) %>
+      <% if entry.occurred_on %>
+        — <%= entry.occurred_on.strftime("%B %d, %Y") %>
+      <% end %>
+      <% if entry.place %>
+        at <%= link_to entry.place.name, place_path(entry.place) %>
+      <% end %>
+    </li>
+  <% end %>
+</ul>
+
+<%= link_to "Back to Places", places_path %>

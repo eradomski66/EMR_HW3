@@ -1,0 +1,13 @@
+<h1><%= @entry.title %></h1>
+
+<% if @entry.occurred_on %>
+  <p><strong>Date:</strong> <%= @entry.occurred_on.strftime("%B %d, %Y") %></p>
+<% end %>
+
+<% if @entry.place %>
+  <p><strong>Place:</strong> <%= link_to @entry.place.name, place_path(@entry.place) %></p>
+<% end %>
+
+<p><%= @entry.description %></p>
+
+<%= link_to "Back to All Entries", entries_path %>
