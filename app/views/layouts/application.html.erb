@@ -1,15 +1,144 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>StarterApp</title>
+    <title>Travel Journal</title>
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
     <%= stylesheet_link_tag "application" %>
+
+    <style>
+      * { box-sizing: border-box; margin: 0; padding: 0; }
+
+      body {
+        font-family: Georgia, serif;
+        background-color: #f5f0e8;
+        color: #2c2c2c;
+      }
+
+      header {
+        background-color: #1a3c5e;
+        color: white;
+        padding: 20px 40px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+      }
+
+      header h1 {
+        font-size: 1.8rem;
+        letter-spacing: 2px;
+        text-transform: uppercase;
+      }
+
+      header p {
+        font-size: 0.9rem;
+        color: #a8c4e0;
+        font-style: italic;
+      }
+
+      nav {
+        background-color: #c8a96e;
+        padding: 10px 40px;
+      }
+
+      nav a {
+        color: white;
+        text-decoration: none;
+        margin-right: 20px;
+        font-size: 0.95rem;
+        font-family: Arial, sans-serif;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+      }
+
+      nav a:hover { text-decoration: underline; }
+
+      main {
+        max-width: 900px;
+        margin: 40px auto;
+        padding: 0 20px;
+      }
+
+      h1 { font-size: 2rem; margin-bottom: 20px; color: #1a3c5e; }
+      h2 { font-size: 1.4rem; margin: 20px 0 10px; color: #1a3c5e; }
+
+      ul { list-style: none; padding: 0; }
+      li { padding: 8px 0; border-bottom: 1px solid #ddd; }
+
+      a { color: #1a3c5e; }
+      a:hover { color: #c8a96e; }
+
+      form p { margin-bottom: 12px; }
+
+      label {
+        display: block;
+        font-size: 0.85rem;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        margin-bottom: 4px;
+        color: #555;
+        font-family: Arial, sans-serif;
+      }
+
+      input[type="text"],
+      input[type="date"],
+      textarea {
+        width: 100%;
+        padding: 8px;
+        border: 1px solid #ccc;
+        background: white;
+        font-size: 1rem;
+        font-family: Georgia, serif;
+      }
+
+      textarea { height: 100px; }
+
+      button {
+        background-color: #1a3c5e;
+        color: white;
+        border: none;
+        padding: 10px 24px;
+        font-size: 1rem;
+        cursor: pointer;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+      }
+
+      button:hover { background-color: #c8a96e; }
+
+      footer {
+        text-align: center;
+        padding: 30px;
+        margin-top: 60px;
+        font-size: 0.8rem;
+        color: #999;
+        font-family: Arial, sans-serif;
+        border-top: 1px solid #ddd;
+      }
+    </style>
   </head>
 
   <body>
-    <%= yield %>
+    <header>
+      <div>
+        <h1>Travel Journal</h1>
+        <p>Your memories, your world</p>
+      </div>
+    </header>
+
+    <nav>
+      <a href="/places">Places</a>
+      <a href="/entries">Entries</a>
+    </nav>
+
+    <main>
+      <%= yield %>
+    </main>
+
+    <footer>
+      &copy; <%= Date.today.year %> Travel Journal. All rights reserved.
+    </footer>
   </body>
 </html>
