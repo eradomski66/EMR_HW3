@@ -17,4 +17,6 @@
   <p>No entries yet.</p>
 <% end %>
 
-<%= link_to "Back to Places", places_path %>
+<p><a href="/entries/new?place_id=<%= @place.id %>">New Entry</a></p>
+
+<p><a href="/places">Back to Places</a></p>
