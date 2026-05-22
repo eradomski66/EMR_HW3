@@ -1,4 +1,4 @@
-class EntryController < ApplicationController
+class EntriesController < ApplicationController
   def index
     @entries = Entry.all
   end

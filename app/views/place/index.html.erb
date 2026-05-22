@@ -7,3 +7,16 @@
 </ul>
 
 <%= link_to "All Entries", entries_path %>
+
+<h1>New Place</h1>
+
+<form action="/places" method="post">
+  <p>
+    <label for="name">Name</label>
+    <input type="text" name="name">
+  </p>
+
+  <button>Submit</button>
+</form>
+
+<a href="/places/new">Create a new place</a>
