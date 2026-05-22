@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
 
-  resources "companies"
+  resources "entries"
   resources "places"
 
 end

@@ -10,6 +10,7 @@ class PlacesController < ApplicationController
   def create
     # start with a new Place
     @place = Place.new
+    @place["name"] = params["name"]
 
     # save Place row
     @place.save
